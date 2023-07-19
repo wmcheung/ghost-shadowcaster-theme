@@ -1,6 +1,6 @@
 {
-    "name": "ghost-starter-theme",
-    "description": "A starter theme for Ghost theme development",
+    "name": "ghost-shadowcaster-theme",
+    "description": "Ghost shadowcaster theme",
     "demo": "https://starter.ghost.io",
     "version": "2.0.1",
     "engines": {
@@ -11,11 +11,11 @@
         "desktop": "assets/screenshot-desktop.jpg"
     },
     "scripts": {
-        "dev": "rollup -c --environment BUILD:development -w",
-        "build": "rollup -c --environment BUILD:production",
-        "zip": "npm run build && bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json",
-        "test": "npx gscan .",
-        "pretest": "npm run build"
+        "dev": "concurrently \"rollup -c --environment BUILD:development -w\" \"yarn tailwindcss -i ./assets/css/index.css -o ./assets/built/index.css --watch\" ",
+        "build": "rollup -c --environment BUILD:production && yarn tailwindcss -i ./assets/css/index.css -o ./assets/built/index.css --minify",
+        "zip": "yarn run build && bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json",
+        "test": "yarn gscan .",
+        "pretest": "yarn run build"
     },
     "author": {
         "name": "Ghost Foundation",
@@ -47,13 +47,17 @@
         "@rollup/plugin-commonjs": "^25.0.0",
         "@rollup/plugin-node-resolve": "^15.0.1",
         "@rollup/plugin-terser": "^0.4.0",
+        "@tailwindcss/typography": "^0.5.9",
         "bestzip": "^2.2.1",
+        "concurrently": "^8.2.0",
+        "gscan": "^4.37.1",
         "postcss": "^8.4.24",
         "postcss-import": "^15.1.0",
         "postcss-preset-env": "^8.0.1",
         "rollup": "^3.18.0",
         "rollup-plugin-livereload": "^2.0.5",
-        "rollup-plugin-postcss": "^4.0.2"
+        "rollup-plugin-postcss": "^4.0.2",
+        "tailwindcss": "^3.3.3"
     },
     "browserslist": [
         "defaults"
@@ -79,6 +83,24 @@
             },
             "xl": {
                 "width": 2000
+            }
+        },
+        "custom": {
+            "twitter": {
+                "type": "text",
+                "description": "URL to your Twitter social media"
+            },
+            "linkedin": {
+                "type": "text",
+                "description": "URL to your LinkedIn social media"
+            },
+            "keybase": {
+                "type": "text",
+                "description": "URL to your Keybase social media"
+            },
+            "github": {
+                "type": "text",
+                "description": "URL to your GitHub social media"
             }
         }
     },

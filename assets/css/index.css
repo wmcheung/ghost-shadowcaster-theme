@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /*
 
 This is a development CSS file that is compiled to a minified
@@ -25,8 +29,6 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import "ghost/pagination.css";
 @import "ghost/comments.css";
 
-
-
 /* Main - Your styles here! Edit below
 /* ---------------------------------------------------------- */
 
@@ -35,7 +37,8 @@ html,
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: #ffffff;
+    @apply bg-emperor-950;
+    @apply text-emperor-100;
 }
 
 .gh-main {
@@ -96,6 +99,10 @@ html,
     margin: 8vmin auto 0;
 } */
 
+.kg-card.kg-button-card a.kg-btn {
+    @apply rounded-full;
+}
+
 .gh-card-link {
     display: flex;
     flex-direction: column;
@@ -112,7 +119,6 @@ html,
 .gh-card-image:first-of-type {
     aspect-ratio: 16 / 9;
 }
-
 
 .gh-card-meta {
     display: block;
@@ -144,7 +150,6 @@ html,
     opacity: 0.75;
 }
 
-
 /* Page
 /* ---------------------------------------------------------- */
 
@@ -172,7 +177,6 @@ html,
         font-size: 1.6rem;
     }
 }
-
 
 /* Post
 /* ---------------------------------------------------------- */
@@ -210,7 +214,6 @@ html,
     margin: 2rem 0;
 }
 
-
 /* Author Archive
 /* ---------------------------------------------------------- */
 
@@ -247,7 +250,7 @@ html,
     margin: 0 1.25vmin 0 0;
     height: 1em;
     width: 1px;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     transform: rotate(20deg);
 }
 
