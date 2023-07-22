@@ -1,20 +1,26 @@
 {{!< default}}
 <div class="gh-page">
-    <div class="gh-container">
-
-        <div class="gh-postfeed">
-        {{#foreach posts}}
-
-            {{> "card" page=../pagination.page }} {{!-- partials/card.hbs --}}
-
-        {{/foreach}}
+    <div class="gh-container space-y-8">
+        <div class="gh-intro">
+            <h1>Wesley Cheung</h1>
+            <h3>Oslo, Norway</h3>
+        </div>
+        <div class="space-y-2">
+            <p>During the day, I'm a dedicated developer crafting innovative solutions, while my evenings are reserved for my passion:
+            badminton 🏸.</p>
+            <p class="font-semibold">
+            Currently a <span class="gradient-text">Senior Frontend Engineer building the next generation of IAM</span> at <a class="underline" href="https://www.indykite.com/" target="_blank" rel="noopener">Indykite</a>.
+            </p>
+            <p>On weekends (Fri - Sun), I make myself available for remote freelance engineering work, dedicating up to 25 hours a week
+            to help clients with their projects. Feel free to reach out to me via LinkedIn if you're interested in collaborating.</p>
+        </div>
+        <div>
+            <p>
+                I enjoy sharing my insights and experiences in frontend development through thoughtful articles on various subjects that
+                intrigue me.
+            </p>
         </div>
 
-        {{!-- If JS isn't enabled, fallback to standard pagination --}}
-        <noscript>
-            <div class="gh-pagination">
-                {{pagination}}
-            </div>
-        </noscript>
+        {{> "socials"}}
     </div>
 </div>

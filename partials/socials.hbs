@@ -1,0 +1,30 @@
+<ul class="flex gap-4 divide-x">
+    {{#if @custom.github}}
+    <li>
+        <a href="{{@custom.github}}" target="_blank" rel="noopener">
+            GitHub
+        </a>
+    </li>
+    {{/if}}
+    {{#if @custom.twitter}}
+    <li class="pl-4">
+        <a href="{{@custom.twitter}}" target="_blank" rel="noopener">
+            Twitter
+        </a>
+    </li>
+    {{/if}}
+    {{#if @custom.linkedin}}
+    <li class="pl-4">
+        <a href="{{@custom.linkedin}}" target="_blank" rel="noopener">
+            LinkedIn
+        </a>
+    </li>
+    {{/if}}
+    {{#if @custom.keybase}}
+    <li class="pl-4">
+        <a href="{{@custom.keybase}}" target="_blank" rel="noopener">
+            Keybase
+        </a>
+    </li>
+    {{/if}}
+</ul>

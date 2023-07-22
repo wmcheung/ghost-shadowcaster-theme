@@ -37,17 +37,6 @@
         <div class="gh-head-menu">
             {{navigation}}
         </div>
-        <div class="gh-head-actions">
-            <div class="gh-head-actions-list">
-                {{#if @site.facebook}}
-                <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-                {{/if}}
-                {{#if @site.twitter}}
-                <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-                {{/if}}
-                <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
-            </div>
-        </div>
     </nav>
 </header>
 
@@ -55,9 +44,11 @@
 
     <section class="gh-page gh-error">
         <div class="gh-container">
-
-            <section class="gh-error-content">
-
+            <section class="gh-friendly-error space-y-12">
+                <h1 class="gh-error-title gradient-text text-5xl">Oops, this is a void dimension</h1>
+                <button class="gh-button btn" onclick="window.history.back();">Go back</button>
+            </section>
+            <section class="gh-error-content hidden">
                 <h1 class="gh-error-code">{{statusCode}}</h1>
                 <p class="gh-error-description">{{message}}</p>
                 <p class="gh-error-link"><a href="{{@site.url}}">Go to the front page →</a></p>
@@ -86,17 +77,6 @@
     </section>
 
 </main>
-
-<footer class="gh-foot">
-    <div class="gh-container">
-        <div class="gh-foot-menu">
-            {{navigation type="secondary"}}
-        </div>
-        <div class="gh-foot-meta">
-            Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-        </div>
-    </div>
-</footer>
 
 </div>
 

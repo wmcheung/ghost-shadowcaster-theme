@@ -1,5 +1,3 @@
-
-
 /* Content grid
 /* ---------------------------------------------------------- */
 
@@ -7,7 +5,10 @@
 .kg-width-full.kg-content-wide {
     --gap: 4vw;
     --main: min(var(--content-width, 720px), 100% - var(--gap) * 2);
-    --wide: minmax(0, calc((var(--container-width, 1200px) - var(--content-width, 720px)) / 2));
+    --wide: minmax(
+        0,
+        calc((var(--container-width, 1200px) - var(--content-width, 720px)) / 2)
+    );
     --full: minmax(var(--gap), 1fr);
 
     display: grid;
@@ -35,7 +36,6 @@
 .kg-width-full img {
     width: 100%;
 }
-
 
 /* Content & Typography
 /* ---------------------------------------------------------- */
@@ -111,12 +111,15 @@
     }
 }
 
-
 /* Cards
 /* ---------------------------------------------------------- */
 
 .gh-content :not(.kg-card):not([id]) + .kg-card {
     margin-top: 6vmin;
+}
+
+.gh-content .kg-card.kg-header-card {
+    background: #139f8f;
 }
 
 .gh-content .kg-card + :not(.kg-card) {
@@ -126,34 +129,33 @@
 figcaption {
     padding: 1.5rem 1.5rem 0;
     text-align: center;
-    color: rgba(0,0,0,0.5);
+    @apply text-emperor-50;
     font-weight: 600;
     font-size: 1.3rem;
     line-height: 1.4em;
 }
 
 figcaption strong {
-    color: rgba(0,0,0,0.8);
+    @apply text-emperor-100;
 }
 
 .gh-canvas :not(pre) code {
     vertical-align: middle;
-    padding: 0.15em 0.4em 0.15em;
-    border: #e1eaef 1px solid;
+    padding: 0.15em 0;
     font-weight: 400 !important;
     font-size: 0.9em;
     line-height: 1em;
     color: #dc0050;
-    background: #f0f6f9;
     border-radius: 0.25em;
 }
 
 .gh-canvas > pre {
     overflow: scroll;
     padding: 16px 20px;
-    background: rgba(255,255,255,0.8);
+    @apply bg-zinc-800;
     border-radius: 5px;
-    box-shadow: 0 2px 6px -2px rgba(0,0,0,.1), 0 0 1px rgba(0,0,0,.4);
+    border: var(--color-border) 1px solid;
+    box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.4);
 }
 
 .kg-embed-card {
@@ -164,7 +166,7 @@ figcaption strong {
 }
 
 /* Default to 16 / 9 aspect ratio for YouTube & Vimeo embeds  */
-.kg-embed-card > :where(iframe[src*="youtube.com"],iframe[src*="vimeo.com"]) {
+.kg-embed-card > :where(iframe[src*="youtube.com"], iframe[src*="vimeo.com"]) {
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
@@ -173,7 +175,6 @@ figcaption strong {
 .kg-image-card img {
     margin: auto;
 }
-
 
 /* Card captions
 /* ---------------------------------------------------------- */
@@ -194,7 +195,6 @@ figcaption strong {
     grid-column: main-start / main-end;
 }
 
-
 /* Tables
 /* ---------------------------------------------------------- */
 
@@ -206,7 +206,7 @@ figcaption strong {
 .gh-content th {
     padding: 0.5em 0.8em;
     text-align: left;
-    font-size: .75em;
+    font-size: 0.75em;
     text-transform: uppercase;
 }
 
@@ -215,20 +215,18 @@ figcaption strong {
 }
 
 .gh-content tbody tr:nth-child(2n + 1) {
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     padding: 1px;
 }
 
 .gh-content tbody tr:nth-child(2n + 2) td:last-child {
-    box-shadow:
-        inset 1px 0 rgba(0,0,0,0.1),
-        inset -1px 0 rgba(0,0,0,0.1);
+    box-shadow: inset 1px 0 rgba(0, 0, 0, 0.1), inset -1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .gh-content tbody tr:nth-child(2n + 2) td {
-    box-shadow: inset 1px 0 rgba(0,0,0,0.1);
+    box-shadow: inset 1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .gh-content tbody tr:last-child {
-    border-bottom: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }

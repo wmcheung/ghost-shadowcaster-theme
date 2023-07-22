@@ -1,0 +1,16 @@
+{{!< default}}
+
+{{#post}}
+<div class="gh-page">
+  <h1>{{title}}</h1>
+
+    {{#get "posts"}}
+        <div class="gh-postfeed">
+            {{#foreach posts}}
+                {{> "card" page=../pagination.page }} {{!-- partials/card.hbs --}}
+            {{/foreach}}
+        </div>
+    {{/get}}
+
+</div>
+{{/post}}
